@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+.map-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* margin-bottom:15%; */
+    z-index:1;
+    border-radius: 0 0 4% 4%;
+}
+
+.MainBar {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    width: 100%;
+}
+
+.ListIcon, .MapIcon {
+    display: inline-block;
+    position: fixed;
+    z-index: 10;
+    bottom:0;
+    font-size:250%;
+    color:black;
+    margin: 5% 7% ;
+
+    border-radius: 50%;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #666;
+    text-align: center;
+}
+
+.ListIcon {
+    float: right;
+    right: 0;
+}
+
+.MapIcon {
+    float: left;
+    left: 0;
+}
+
+.iconWidth {
+    width: 10%;
+    /* height: 10%; */
+}

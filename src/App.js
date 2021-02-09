@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Switch, Route,Link } from "react-router-dom";
 import './App.css';
+import Map from './Components/Pages/Map';
+import List from './Components/Pages/List';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
+
+function getIcon(link) {
+    let url = process.env.PUBLIC_URL+link
+    return url
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <BrowserRouter>
+            <Link key="Map" to="/" >
+                <FontAwesomeIcon className="MapIcon" icon={faMapMarkedAlt} />
+            </Link>
+            <Link key="List" to="/List" >
+                <FontAwesomeIcon className="ListIcon" icon={faSearch} />
+            </Link>
+            <Switch>
+                <Route exact path="/" component={Map} />
+                <Route path="/List" component={List} />
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }
