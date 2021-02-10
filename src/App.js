@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route,Link } from "react-router-dom";
 import './App.css';
-import Map from './Components/Pages/Map';
-import List from './Components/Pages/List';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Map from './components/pages/Map';
+import List from './components/pages/List';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 

@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import fetchFakeData from "../../API/fetchFakeData";
+import fetchFakeData from "../../api/fetchFakeData";
 import Popup from "./Popup";
 import ReactDOM from "react-dom";
 import '../../App.css'
