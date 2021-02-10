@@ -45,7 +45,6 @@
     right: 0;
     /* margin-bottom:15%; */
     z-index:1;
-    border-radius: 0 0 4% 4%;
 }
 
 .MainBar {
@@ -83,5 +82,4 @@
 
 .iconWidth {
     width: 10%;
-    /* height: 10%; */
 }
