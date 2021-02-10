@@ -141,6 +141,5 @@ function Map(){
   
     return <div className="map-container" ref={mapContainerRef} />;
 }
-  
 
 export default Map;
