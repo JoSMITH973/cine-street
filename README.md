@@ -13,4 +13,21 @@
 ### bootstrap
 ### reactstrap
 #
+### react-bootstrap
+#
 ### jsonwebtoken
+#
+### react player
+#
+### dotenv
+#
+### axios
+### react-player
+### dotenv
+### body-parser
+### jsonwebApptoken
+### mysql
+### knex
+### ejs
+### react-carousel
+### 

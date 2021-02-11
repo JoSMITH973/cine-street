@@ -1,11 +1,10 @@
 
 import React, { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import fetchFakeData from "../../api/fetchFakeData";
 import Popup from "./Popup";
 import ReactDOM from "react-dom";
-import '../../App.css'
-import DATA from '../../data/data.json'
+import '../App.css'
+import DATA from '../data/data.json'
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

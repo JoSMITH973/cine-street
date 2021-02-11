@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Map from './Map'
 import Popup from "./Popup";
-import "../../App.css";
+import "../App.css";
 
 
 function List() {
