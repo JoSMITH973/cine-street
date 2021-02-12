@@ -1,11 +1,12 @@
 import '../index.css';
+import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import { Container, Col, Image, Row, Form, FormControl, Button, Jumbotron } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft, faVideo, faCircle, faListUl, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft, faVideo, faCircle, faListUl, faSearch, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 import ReactPlayer from 'react-player'
 
@@ -13,6 +14,8 @@ function SingleFilmPage() {
 
   const history = useHistory();
   const goAccount = () => history.push('/account');
+  const goMap = () => history.push('/Map');
+  const goList = () => history.push('/List');
   const golistMode = () => history.push('/listMode');
 
   return (
@@ -20,14 +23,14 @@ function SingleFilmPage() {
       <Container className="pt-2 fixed-top">
         <Row className="d-flex justify-content-between">
           <FontAwesomeIcon onClick={() => history.goBack()} className="backButton ml-2" icon={faArrowCircleLeft}/>        
-          <Image onClick={goAccount} className="mr-2" src=".\batman.png" rounded width="60" height="60"/>
+          <Image onClick={goAccount} className="mr-2" src={process.env.PUBLIC_URL+"avatars/batman.png"} rounded width="60" height="60"/>
         </Row>
       </Container>
       <Container className="pt-4"></Container>
       <Container className="pt-5">
         <Row className="d-flex justify-content-around">
           <Col>
-            <Image className="poster shadow" src=".\lupin.jpg" rounded/>
+            <Image className="poster shadow" src={process.env.PUBLIC_URL+"posters/lupin.jpg"} rounded/>
           </Col>
           <Col>
             <h2 className="text-break">Lupin</h2>
@@ -89,8 +92,8 @@ function SingleFilmPage() {
       </Container>
       <Container className="pt-2 fixed-bottom">
         <Row className="d-flex justify-content-between pb-2">
-          <FontAwesomeIcon onClick={golistMode} className="buttonFont ml-3 shadow" icon={faListUl}/>        
-          <FontAwesomeIcon className="buttonFont mr-3 shadow" icon={faSearch}/>        
+            <FontAwesomeIcon onClick={goMap} className="MapIcon" icon={faMapMarkedAlt}/>        
+            <FontAwesomeIcon onClick={goList} className="ListIcon" icon={faSearch}/>       
         </Row>
       </Container>
     </div>

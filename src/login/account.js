@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-
 import { Container, Col, Image, Row, Form, FormControl, Button, Jumbotron } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft, faVideo, faCircle, faListUl, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft, faVideo, faCircle, faListUl, faSearch, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 import ReactPlayer from 'react-player'
 
 function Account() {
   const history = useHistory();
-  const goAccount = () => history.push('/account');
-  const golistMode = () => history.push('/listMode');
+  const goMap = () => history.push('/Map');
+  const goList = () => history.push('/List');
 
   return (
     <div>
@@ -25,7 +25,7 @@ function Account() {
         <Container className="pt-5">
           <Jumbotron className="my-4 bgGrey borderRadius py-3 shadow">
             <Row className="justify-content-start">
-                <Image onClick={goAccount} className="mr-2" src=".\batman.png" rounded width="60" height="60"/>
+                <Image className="mr-2" src={process.env.PUBLIC_URL+"avatars/batman.png"} rounded width="60" height="60"/>
                 <h4 className="font-weight-bold">Profil de John Smith</h4>
             </Row>
             <Row className="d-flex">
@@ -42,8 +42,8 @@ function Account() {
     
         <Container className="pt-2 fixed-bottom">
           <Row className="d-flex justify-content-between pb-2">
-            <FontAwesomeIcon onClick={golistMode} className="buttonFont ml-3 shadow" icon={faListUl}/>        
-            <FontAwesomeIcon className="buttonFont mr-3 shadow" icon={faSearch}/>        
+            <FontAwesomeIcon onClick={goMap} className="MapIcon" icon={faMapMarkedAlt}/>        
+            <FontAwesomeIcon onClick={goList} className="ListIcon" icon={faSearch}/>      
           </Row>
         </Container>
     </div>

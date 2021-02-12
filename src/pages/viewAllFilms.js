@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleLeft, faVideo, faCircle, faListUl, faSearch, faMap, faMapMarkerAlt, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import ViewAllFilms from './viewAllFilms';
 import Map from './Home';
+import { BASE_API_URL } from '../utils/constant';
 
 function ListMode() {
     const [hasError, setErrors] = useState(false);
@@ -18,7 +19,7 @@ function ListMode() {
 
     useEffect(() => {
     async function fetchData() {
-        const res = await fetch(`http://localhost:3306/viewAllFilms`)
+        const res = await fetch(`${BASE_API_URL}/viewAllFilms`)
         res
         .json()
         .then(res => {setData(res)})

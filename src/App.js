@@ -73,15 +73,15 @@ function App() {
                     <Route path="/SingleFilmPage">
                         <SingleFilmPage/>
                     </Route>
-                    {/* <Route path="/ForgetPassword">
+                    <Route path="/ForgetPassword">
                         <ForgetPassword/>
                     </Route>
                     <Route path="/Register">
                         <Register/>
-                    </Route> */}
-                    {/* <Route path="/">
+                    </Route> 
+                    <Route path="/">
                         <Login setToken={setToken}/>
-                    </Route> */}
+                    </Route>
                 </Switch>
             </BrowserRouter>
         </div>

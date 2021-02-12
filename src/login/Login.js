@@ -9,29 +9,9 @@ import PropTypes from 'prop-types';
 import axios from 'axios'
 import AWS from 'aws-sdk'
 import fetch from 'node-fetch'
+import { BASE_API_URL } from '../utils/constant';
+import Map from '../pages/Home';
 
-AWS.config.update({
-    secretAccessKey: process.env.SECRET,
-    accessKeyId: process.env.SECRET_ID ,
-    region: 'us-east-1'
-});
-
-function Icon(){
-    AWS.config.update({region :'eu-west-3'})
-
-
-    const S3 = new AWS.S3({
-        params: { Bucket: 'cine-street' },
-      })
-
-      S3.listObjects((err, data)=> {
-        //   console.log(err, data)
-      })
-
-      S3.getObject({Key:'santa.png'},(err,data)=>{
-          console.log(err,data)
-      })
-}
 function getIcon(link) {
     let url = process.env.PUBLIC_URL+link
     return url
@@ -39,7 +19,7 @@ function getIcon(link) {
 
 async function loginUser(dataToTransfer) {
     console.log('dataToTransfer : ',dataToTransfer)
-    const res = await fetch('http://localhost:3306/getUser', {
+    const res = await fetch(`${BASE_API_URL}/getUser`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -55,8 +35,6 @@ function Login({setToken}) {
     const [password, setPassword] = useState();
 
     const handleSubmit = async e => {
-        console.log(email)
-        console.log(password)
         e.preventDefault();
         const token = await loginUser({
             email,
@@ -102,7 +80,6 @@ function Login({setToken}) {
                     <Link className="smallLink" to="/Register">Inscription</Link>       
                 </Row>
             </Container>
-            {Icon()}
         </div>
     );
     // }
