@@ -5,6 +5,8 @@ const mytools = require('./modules/mytools')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const app = express()
+const uniqid = require('uniqid')
+
 const knex = require('knex')({
     client: 'mysql',
     connection: {
@@ -96,8 +98,8 @@ app.post('/getUser', (req, res) => {
     })
     .then((result)=>{
         if(result.length === 1) {
-            console.log('requête terminé, envoi du jeton')
-            res.send({token: 'test123'})
+            console.log(uniqid())
+            res.send({token: uniqid()})
         }
     })
     .catch((err)=>{
