@@ -7,6 +7,8 @@ import { Container, Col, Image, Row, Form, FormControl, Button } from 'react-boo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
+import {getIcon} from '../functions/global'
+
 function ForgotPassword() {
 
   const history = useHistory();
@@ -18,7 +20,7 @@ function ForgotPassword() {
         </Container>
         <Container>
           <Row className="d-flex justify-content-center">
-              <Image className="img-heading mt-4" src=".\logocinestreet.png" rounded width="200" height="125"/>
+              <Image className="img-heading mt-4" src={process.env.PUBLIC_URL+"icones/logo.png"} rounded width="200" height="125"/>
           </Row>
           <Row className="d-flex justify-content-center">
             <h2 className="font-weight-bold mt-4">Mot de passe oublié</h2>

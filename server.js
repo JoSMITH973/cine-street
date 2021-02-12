@@ -16,6 +16,8 @@ const knex = require('knex')({
 })
 app.use(cors({origin:true}))
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 app.set(`view engine`, 'ejs')
 let allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
@@ -79,8 +81,11 @@ app.get('/getUsers', (req, res) => {
     })
 })
 
-app.get('/getUser/:email/:pwd', (req, res) => {
-    knex.where({email : req.params.email, password : req.params.pwd}).select('*').from('users').then((rows)=>{
+app.post('/getUser', (req, res) => {
+    let emailUser = req.body.email
+    let passwordUser = req.body.password
+    if (emailUser !== undefined && passwordUser !== undefined) {
+    knex.where({email : emailUser, password : passwordUser}).select('*').from('users').then((rows)=>{
         let data = []
         for (rows of rows){
             // console.log(`${mydate.infoDate(rows.name).getDay()}`)
@@ -90,11 +95,18 @@ app.get('/getUser/:email/:pwd', (req, res) => {
         return data
     })
     .then((result)=>{
-        res.json(result)
+        if(result.length === 1) {
+            console.log('requête terminé, envoi du jeton')
+            res.send({token: 'test123'})
+        }
     })
     .catch((err)=>{
         if(err) throw err
     })
+    }
+    else {
+        res.send('erreur here')
+    }
 })
 
 app.get('/insertFilms', (req, res)=>{
