@@ -1,6 +1,6 @@
 # CineStreet
 #
-## Package Installé
+## Package Installé :
 #
 ### mapbox-gl
 #### Ajout de la ligne suivante dans le index.html (public) :
@@ -9,18 +9,12 @@
 ### @fontawesome-svg-core
 ### @fortawesome/free-solid-svg-icons
 ### @fortawesome/react-fontawesome
-#
 ### bootstrap
 ### reactstrap
-#
 ### react-bootstrap
-#
 ### jsonwebtoken
-#
 ### react player
-#
 ### dotenv
-#
 ### axios
 ### react-player
 ### dotenv
@@ -30,4 +24,5 @@
 ### knex
 ### ejs
 ### react-carousel
+### uniqid
 ### 
